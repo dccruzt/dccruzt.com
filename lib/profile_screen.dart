@@ -17,7 +17,8 @@ class ProfileScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                Image.asset('images/daniela.png', width: x30, height: x30),
+                Image.asset('assets/images/daniela.png',
+                    width: x30, height: x30),
                 const SizedBox(width: x4),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

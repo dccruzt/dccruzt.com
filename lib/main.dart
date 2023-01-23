@@ -1,9 +1,17 @@
 import 'package:dccruzt/design_system/colors.dart';
-import 'package:dccruzt/profile.dart';
+import 'package:dccruzt/profile_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  LicenseRegistry.addLicense(() async* {
+    final license =
+        await rootBundle.loadString('assets/google_fonts/LICENSE.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
+
   runApp(const MyApp());
 }
 
@@ -12,6 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GoogleFonts.config.allowRuntimeFetching = false;
     final customTextTheme = GoogleFonts.robotoMonoTextTheme().apply(
       bodyColor: Colors.white,
       displayColor: Colors.white,
