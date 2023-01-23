@@ -1,0 +1,15 @@
+# Miscellaneous
+.DS_Store
+
+# IntelliJ related
+.idea/
+*.iml
+
+# Flutter/Dart/Pub related
+.dart_tool/
+build/
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
