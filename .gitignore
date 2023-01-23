@@ -8,8 +8,12 @@
 # Flutter/Dart/Pub related
 .dart_tool/
 build/
+.flutter-plugins
+.flutter-plugins-dependencies
+macos/
+ios/
 
 # Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+android/app/src/debug
+android/app/src/profile
+android/app/src/release
