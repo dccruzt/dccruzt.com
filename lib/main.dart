@@ -1,9 +1,12 @@
 import 'package:dccruzt/design_system/colors.dart';
-import 'package:dccruzt/profile_screen.dart';
+import 'package:dccruzt/pages/blog_page.dart';
+import 'package:dccruzt/pages/resume_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'pages/home_page.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -32,25 +35,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: primaryBlack,
         scaffoldBackgroundColor: Colors.black,
         textTheme: customTextTheme,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Center(child: ProfileScreen()),
+      routes: {
+        '/': (context) => const HomePage(),
+        '/resume': (context) => const ResumePage(),
+        '/blog': (context) => const BlogPage(),
+      },
     );
   }
 }
