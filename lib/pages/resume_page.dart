@@ -39,35 +39,38 @@ class ResumePage extends StatelessWidget {
               const SizedBox(height: x4),
               const Text(workExperienceTitle),
               const SizedBox(height: x4),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  JobItem(
-                    date: job5Date,
-                    title: job5Title,
-                    description: job5Description,
-                  ),
-                  JobItem(
-                    date: job4Date,
-                    title: job4Title,
-                    description: job4Description,
-                  ),
-                  JobItem(
-                    date: job3Date,
-                    title: job3Title,
-                    description: job3Description,
-                  ),
-                  JobItem(
-                    date: job2Date,
-                    title: job2Title,
-                    description: job2Description,
-                  ),
-                  JobItem(
-                    date: job1Date,
-                    title: job1Title,
-                    description: job1Description,
-                  ),
-                ],
+              SizedBox(
+                width: 900,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    JobItem(
+                      date: job5Date,
+                      title: job5Title,
+                      description: job5Description,
+                    ),
+                    JobItem(
+                      date: job4Date,
+                      title: job4Title,
+                      description: job4Description,
+                    ),
+                    JobItem(
+                      date: job3Date,
+                      title: job3Title,
+                      description: job3Description,
+                    ),
+                    JobItem(
+                      date: job2Date,
+                      title: job2Title,
+                      description: job2Description,
+                    ),
+                    JobItem(
+                      date: job1Date,
+                      title: job1Title,
+                      description: job1Description,
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: x20),
             ],
@@ -105,18 +108,20 @@ class JobItem extends StatelessWidget {
             style: theme.textTheme.bodySmall?.copyWith(color: Colors.white60),
           ),
           const SizedBox(width: x8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(title),
-              const SizedBox(height: x3),
-              Text(
-                description,
-                style:
-                    theme.textTheme.bodySmall?.copyWith(color: Colors.white60),
-              ),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(title),
+                const SizedBox(height: x3),
+                Text(
+                  description,
+                  style: theme.textTheme.bodySmall
+                      ?.copyWith(color: Colors.white60),
+                ),
+              ],
+            ),
           ),
         ],
       ),
